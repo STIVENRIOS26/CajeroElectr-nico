@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 /* Cuerpo */
 body{
@@ -11,7 +11,8 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url(../img/background.jpg);
+    background-image: url(../img/azul.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     
@@ -196,7 +197,7 @@ header{
     justify-content: space-between;
 }
 .remember-forgot label input{
-    accent-color: #f03b9e;
+    accent-color: #3b65f0;
     margin-right: 3px;
 }
 .remember-forgot a{
@@ -210,7 +211,7 @@ header{
     width: 100%;
     height: 45px;
     margin-top: 10px;
-    background: #ff1f88ec;
+    background: #3b65f0;
     border: none;
     outline: none;
     border-radius: 6px;
@@ -219,6 +220,60 @@ header{
     color: #fff;
     font-weight: 500;
 }
+
+.btn-box button{
+    width: 300px;
+    height: 200px;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    background: #3b65f0;
+    border: solid 2px #162938;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+}
+.btn-box button:hover{
+    border: solid 2px #162938;
+    color: #fff;
+    background-color: #063df0;
+}
+.btnUno{
+    position: absolute;
+    left: 350px;
+}
+.btnDos{    
+    position: absolute;
+    top: 100px;
+    left: 350px;
+}
+.btnTres{    
+    position: absolute;
+    right: 350px;
+    top: 100px;
+}
+.btnCuatro{    
+    position: absolute;
+    right: 350px;
+}
+.btnCinco{   
+    width: 60%; 
+    height: 30px;
+    position: absolute;
+    right: 300px;
+    bottom: 40px;
+    background: #3b65f0;
+    border: solid 2px #162938;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+.btnCinco:hover{
+    border: solid 2px #162938;
+    color: #fff;
+    background-color: #063df0;
+}
+
 .login-register{
     font-size: .9em;
     color: #162938;
@@ -234,27 +289,3 @@ header{
 .login-register p a:hover{
     text-decoration: underline;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
