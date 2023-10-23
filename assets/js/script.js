@@ -31,9 +31,53 @@ function inicioSesion(){
 }
 
 
-logout.addEventListener("click", () => {
-        // Cierra la sesión (limpia los datos de sesión o tokens de autenticación, si es necesario)
-        
-        // Redirige al usuario a la página de inicio
-        window.location.href = "index.html"; // Reemplaza "index.html" con la URL correcta de tu página de inicio
-    });
+/* const logout =()=>{
+    sessionStorage.removeItem('token')
+    window.location='index.html'
+}
+
+const logoutButton = document.querySelector('')
+logoutButton.addEventListener('click', logout) */
+//funciones
+
+// Saldo inicial
+let saldo = 100000;
+
+// Función para consultar el saldo
+function consultarSaldo() {
+    alert(`Saldo actual: $${saldo}`);
+}
+
+// Función para retirar dinero
+function retirarDinero() {
+    const monto = parseFloat(prompt("Ingrese la cantidad a retirar:"));
+    if (!isNaN(monto) && monto <= saldo) {
+        saldo -= monto;
+        alert(`Se retiraron $${monto}. Saldo restante: $${saldo}`);
+    } else {
+        alert("Monto inválido o insuficiente saldo.");
+    }
+}
+
+// Función para transferir dinero
+function transferir() {
+    const monto = parseFloat(prompt("Ingrese la cantidad a transferir:"));
+    if (!isNaN(monto) && monto <= saldo) {
+        const cuentaDestino = prompt("Ingrese la cuenta de destino:");
+        alert(`Se transfirieron $${monto} a la cuenta ${cuentaDestino}`);
+        saldo -= monto;
+    } else {
+        alert("Monto inválido o insuficiente saldo.");
+    }
+}
+
+// Función para consignar dinero
+function consignarDinero() {
+    const monto = parseFloat(prompt("Ingrese la cantidad a consignar:"));
+    if (!isNaN(monto) && monto >= 10000) {
+        saldo += monto;
+        alert(`Se consignaron $${monto}. Saldo actual: $${saldo}`);
+    } else {
+        alert("Monto inválido o insuficiente.");
+    }
+}

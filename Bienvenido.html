@@ -19,21 +19,24 @@
     </header>
     <main>
         <div class="btn-box">
-            <button type="submit" class="btnUno">Consultar saldo
+            <button onclick="consultarSaldo()" type="submit" class="btnUno">Consultar saldo
             </button>
-            <button type="submit" class="btnDos">Retirar dinero
+            <button onclick="retirarDinero()" type="submit" class="btnDos">Retirar dinero
             </button>
-            <button type="submit" class="btnTres">Consignar a otra cuenta
+            <button onclick="transferir()" type="submit" class="btnTres">Consignar a otra cuenta
             </button>
-            <button type="submit" class="btnCuatro">Consignar a mi cuenta
+            <button onclick="consignarDinero()" type="submit" class="btnCuatro">Consignar a mi cuenta
             </button>
         </div>
 
-        <input id="close" onclick="cerrarSesion()" type="button" class="btnCinco" value="Cerrar Sesion">
-            <span> 
+        <input id="logoutButton" type="button" class="btnCinco" value="Cerrar Sesion">
+            <span class="icon-cerrarSesion"> 
                 <ion-icon name="log-out-outline"></ion-icon>
             </span>
         </input>
     </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

@@ -257,10 +257,10 @@ header{
     right: 350px;
 }
 .btnCinco{   
-    width: 60%; 
+    width: 40%; 
     height: 30px;
     position: absolute;
-    right: 300px;
+    left: 395px;
     bottom: 40px;
     background: #3b65f0;
     border: solid 2px #162938;
@@ -272,6 +272,13 @@ header{
     border: solid 2px #162938;
     color: #fff;
     background-color: #063df0;
+}
+.icon-cerrarSesion{
+    width: 10px;
+    position: absolute;
+    left: 42.5%;
+    bottom: 42px;
+    color: #fff;
 }
 
 .login-register{
