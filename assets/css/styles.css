@@ -226,12 +226,14 @@ header{
     height: 200px;
     font-size: 25px;
     font-family: 'Times New Roman', Times, serif;
-    background: #3b65f0;
-    border: solid 2px #162938;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
     outline: none;
+    backdrop-filter: blur(20px);
     border-radius: 6px;
     cursor: pointer;
     color: #fff;
+
 }
 .btn-box button:hover{
     border: solid 2px #162938;
@@ -262,8 +264,11 @@ header{
     position: absolute;
     left: 395px;
     bottom: 40px;
-    background: #3b65f0;
-    border: solid 2px #162938;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    outline: none;
+    backdrop-filter: blur(20px);
+    border-radius: 6px;
     color: #fff;
     font-size: 20px;
     cursor: pointer;
@@ -296,3 +301,4 @@ header{
 .login-register p a:hover{
     text-decoration: underline;
 }
+

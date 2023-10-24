@@ -30,54 +30,22 @@ function inicioSesion(){
     }
 }
 
+//Boton Retirar Dinero
 
-/* const logout =()=>{
-    sessionStorage.removeItem('token')
-    window.location='index.html'
-}
+function realizarRetiro() {
+            var saldoActual = parseFloat(document.getElementById('saldo').textContent);
+            var cantidadARetirar = parseFloat(document.getElementById('retiro').value);
 
-const logoutButton = document.querySelector('')
-logoutButton.addEventListener('click', logout) */
-//funciones
+            if (isNaN(cantidadARetirar)) {
+                alert("Por favor, ingrese una cantidad válida.");
+            } else if (cantidadARetirar > saldoActual) {
+                alert("Saldo insuficiente.");
+            } else {
+                saldoActual -= cantidadARetirar;
+                document.getElementById('saldo').textContent = saldoActual.toFixed(2);
+                alert("Retiro exitoso. Nuevo saldo: " + saldoActual.toFixed(2) + " USD");
+            }
 
-// Saldo inicial
-let saldo = 100000;
-
-// Función para consultar el saldo
-function consultarSaldo() {
-    alert(`Saldo actual: $${saldo}`);
-}
-
-// Función para retirar dinero
-function retirarDinero() {
-    const monto = parseFloat(prompt("Ingrese la cantidad a retirar:"));
-    if (!isNaN(monto) && monto <= saldo) {
-        saldo -= monto;
-        alert(`Se retiraron $${monto}. Saldo restante: $${saldo}`);
-    } else {
-        alert("Monto inválido o insuficiente saldo.");
-    }
-}
-
-// Función para transferir dinero
-function transferir() {
-    const monto = parseFloat(prompt("Ingrese la cantidad a transferir:"));
-    if (!isNaN(monto) && monto <= saldo) {
-        const cuentaDestino = prompt("Ingrese la cuenta de destino:");
-        alert(`Se transfirieron $${monto} a la cuenta ${cuentaDestino}`);
-        saldo -= monto;
-    } else {
-        alert("Monto inválido o insuficiente saldo.");
-    }
-}
-
-// Función para consignar dinero
-function consignarDinero() {
-    const monto = parseFloat(prompt("Ingrese la cantidad a consignar:"));
-    if (!isNaN(monto) && monto >= 10000) {
-        saldo += monto;
-        alert(`Se consignaron $${monto}. Saldo actual: $${saldo}`);
-    } else {
-        alert("Monto inválido o insuficiente.");
-    }
-}
+            // Limpiar el campo de retiro
+            document.getElementById('retiro').value = "";
+        }
