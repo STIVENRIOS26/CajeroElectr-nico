@@ -1,14 +1,14 @@
 //Funcionalidad abrir y cerrar login 
-const contenedor = document.querySelector(".contenedorLogReg"),
-    loginHeader = document.querySelector(".form-box h2")
-    registroHeader = document.querySelector(".form-box h2")
+const wrapper = document.querySelector(".wrapper")
+/* const containerLogin = document.querySelector(".containerLogin h2")
+const formBoxRegister = document.querySelector(".containerRegistro h2")
 
-registroHeader.addEventListener('click', () => {
+containerRegistro.addEventListener('click', () => {
     contenedor.classList.add('active')
 })
-loginHeader.addEventListener('click', () => {
+containerLogin.addEventListener('click', () => {
     contenedor.classList.remove('active')
-})
+}) */
 
 //cambio de login a registro
 const loginLink = document.querySelector('.login-link');
@@ -17,39 +17,39 @@ const btnPopup = document.querySelector('.btnLoginPopup');
 const iconClose = document.querySelector('.icon-close');
 
 registerLink.addEventListener('click', ()=>{
-    contenedorLogReg.classList.add('active')
+    wrapper.classList.add('active')
 })
 loginLink.addEventListener('click', ()=>{
-    contenedorLogReg.classList.remove('active')
+    wrapper.classList.remove('active')
 })
 btnPopup.addEventListener('click', ()=>{
-    contenedorLogReg.classList.add('active-popup')
+    wrapper.classList.add('active-popup')
 })
 iconClose.addEventListener('click', ()=>{
-    contenedorLogReg.classList.remove('active-popup')
+    wrapper.classList.remove('active-popup')
 })
-
+/* 
 //Variables globales necesarias en el proyecto
 let saldo = ''
 let intentosFallidos = 0
 let correoUsuario = ''
-const contenedorLogReg = document.getElementById('contenedorLogReg')
+const wrapper = document.getElementById('wrapper')
 const opciones = document.getElementById('main-menu')
-const checkBalanceBtn = document.getElementById('check-balance')
-const withdrawBtn = document.getElementById('withdraw')
-const transferBtn = document.getElementById('transfer')
-const depositBtn = document.getElementById('deposit')
-const showTransactionsBtn = document.getElementById('show-transactions')
-const saldoContainer = document.getElementById('saldo-container')
-const volverMainMenuBtn = document.getElementById('volver-main-menu')
-const retiro = document.getElementById('retiro-real')
-const retiroAmountInput = document.getElementById('retiro-amount')
-const realizarRetiroBtn = document.getElementById('realizar-retiro')
-const cancelarRetiroBtn = document.getElementById('cancelar-retiro')
-const comprobanteRetiro = document.getElementById('comprobante-retiro')
+const checkBalanceBtn = document.getElementById('consultarSaldo')
+const withdrawBtn = document.getElementById('retirarDinero')
+const transferBtn = document.getElementById('transferir')
+const depositBtn = document.getElementById('consignarDinero')
+const showTransactionsBtn = document.getElementById('historial')
+const saldoContainer = document.getElementById('contenedorSaldo')
+const volverMainMenuBtn = document.getElementById('regresarMenu')
+const retiro = document.getElementById('retiroRetiro')
+const retiroAmountInput = document.getElementById('montoRetiro')
+const realizarRetiroBtn = document.getElementById('realizarRetiro')
+const cancelarRetiroBtn = document.getElementById('cancelarRetiro')
+const comprobanteRetiro = document.getElementById('comprobanteRetiro')
 
-const transfer = document.getElementById('transfer-div')
-const realizarTransferenciaBtn = document.getElementById('realizar-transferencia')
+const transfer = document.getElementById('transferirElDinero')
+const realizarTransferenciaBtn = document.getElementById('realizarTransferencia')
 const cancelarTransferenciaBtn = document.getElementById('cancelar-transferencia')
 const comprobanteTransferenciaDiv = document.getElementById('comprobante-transferencia')
 
@@ -76,13 +76,13 @@ const userRegistrationRegex =
 
 //funcion para iniciar sesion
 function iniciarSesion() {
-    contenedorLogReg.style.display = 'none'
+    wrapper.style.display = 'none'
     opciones.style.display = 'block'
 }
 
 //funcion para cerrar sesion
 function cerrarSesion() {
-    contenedorLogReg.style.display = 'block'
+    wrapper.style.display = 'block'
     opciones.style.display = 'none'
 }
 //funcion para limpiar los input del login
@@ -184,7 +184,7 @@ document.getElementById('login').addEventListener('submit', function loginUsuari
 })
 //Consultar saldo 
 function consultarSaldo() {
-    contenedorLogReg.style.display = 'none'
+    wrapper.style.display = 'none'
     opciones.style.display = 'none'
 
     const usuarioActual = usuariosRegistrados.find(usuario => usuario.correoRegistro === correoUsuario)
@@ -208,14 +208,14 @@ checkBalanceBtn.addEventListener('click', function () {
 
 volverMainMenuBtn.addEventListener('click', function () {
     document.getElementById('saldo-container').style.display = 'none'
-    contenedorLogReg.style.display = 'none'
+    wrapper.style.display = 'none'
     opciones.style.display = 'block'
 })
 
 //Retirar dinero de la cuenta 
 document.getElementById('withdraw').addEventListener('click', function () {
     retiro.style.display = 'block'
-    contenedorLogReg.style.display = 'none'
+    wrapper.style.display = 'none'
     opciones.style.display = 'none'
 });
 realizarRetiroBtn.addEventListener('click', function () {
@@ -241,14 +241,14 @@ realizarRetiroBtn.addEventListener('click', function () {
 })
 document.getElementById('volver-main-menu-comprobante-retiro').addEventListener('click', function () {
     retiro.style.display = 'none';
-    contenedorLogReg.style.display = 'none';
+    wrapper.style.display = 'none';
     opciones.style.display = 'block';
     comprobanteRetiro.style.display = 'none';
 })
 // Evento para cancelar el retiro
 cancelarRetiroBtn.addEventListener('click', function () {
     retiro.style.display = 'none'
-    contenedorLogReg.style.display = 'none'
+    wrapper.style.display = 'none'
     opciones.style.display = 'block'
     retiroAmountInput.value = ''
 })
@@ -256,7 +256,7 @@ cancelarRetiroBtn.addEventListener('click', function () {
 transferBtn.addEventListener('click', function () {
     transfer.style.display = 'block'
     comprobanteTransferenciaDiv.style.display = 'none'
-    contenedorLogReg.style.display = 'none'
+    wrapper.style.display = 'none'
     opciones.style.display = 'none'
 });
 
@@ -297,7 +297,7 @@ realizarTransferenciaBtn.addEventListener('click', function () {
 // Evento para cancelar la transferencia
 cancelarTransferenciaBtn.addEventListener('click', function () {
     transfer.style.display = 'none'
-    contenedorLogReg.style.display = 'none'
+    wrapper.style.display = 'none'
     opciones.style.display = 'block'
 
     document.getElementById('destinatario').value = '';
@@ -343,7 +343,7 @@ realizarConsignacionBtn.addEventListener('click', function () {
 })
 document.getElementById('volver-main-menu-comprobante-consignacion').addEventListener('click', function () {
     comprobanteConsignacion.style.display = 'none';
-    contenedorLogReg.style.display = 'none';
+    wrapper.style.display = 'none';
     opciones.style.display = 'block';
 })
 
@@ -410,7 +410,7 @@ showTransactionsBtn.addEventListener('click', function mostrarHistorial() {
         botonVolver.addEventListener('click', volverMainMenuDesdeHistorial)
 
         historialContainer.style.display = 'block'
-        contenedorLogReg.style.display = 'none'
+        wrapper.style.display = 'none'
         opciones.style.display = 'none'
     } else {
         console.error('No se pudo encontrar al usuario actual.')
@@ -427,3 +427,4 @@ function volverMainMenuDesdeHistorial() {
 document.getElementById('logout').addEventListener('click', function () {
     cerrarSesion()
 })
+ */

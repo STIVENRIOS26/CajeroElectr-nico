@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <title>CoinBank</title>
     <link rel="shortcut icon" href="./assets/img/azul.jpg">
+    <title>CoinBank</title>
 </head>
 
 <body>
     <header class="header">
         <!-- Logo empresa -->
-        <h2 class="logooooooo">CoinBank</h2>
+        <h2 class="logo">CoinBank</h2>
         <!-- Menu principal de navegacion -->
-        <nav class="navegacion">
+        <nav class="navigation">
             <!-- Enlaces del menu principal -->
             <a href="#">Inicio</a>
             <a href="#">Acerca</a>
@@ -25,50 +25,72 @@
         </nav>
     </header>
 
-    <section class="contenedorLogReg" id="contenedorLogReg">
-        <span class="icon-close"><ion-icon name="close-circle-outline"></ion-icon></span>
+    <section class="wrapper" id="wrapper">
+
+        <span class="icon-close">
+            <ion-icon name="close-circle-outline"></ion-icon>
+        </span>
+
         <div class="form-box login">
             <h2>Login</h2>
             
             <form action="#" id="login">
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                    <input type="email" id="user" placeholder="Correo electronico:" required>
+                    <span class="icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </span>
+                    <input type="email" id="user" required>
+                    <label >Correo electrónico</label>
                 </div>
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                    <input type="password" id="pass" placeholder="Contraseña: Minimo 8 caracteres y una mayuscula" required>
+                    <span class="icon">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </span>
+                    <input type="password" id="pass" required>
+                    <label >Contraseña</label>
                 </div>
                 <div class="remember-forgot">
-                    <label ><input type="checkbox">Recordarme</label>
+                    <label >
+                        <input type="checkbox">Recordarme
+                    </label>
                     <a href="#">¿Olvidaste la Contraseña?</a>
-                    <input type="submit" id="btnIniciar" class="btn" value="Iniciar sesión">
+                </div>
+                <input type="submit" id="btnIniciar" class="btn" value="Iniciar sesión">
+                <div class="login-register">
+                    <p>Don't have an account?
+                        <a href="#" class="register-link">Register</a>
+                    </p>
                 </div>
             </form>
         </div>
 
-        <div class="form-box registro">
+        <div class="form-box register">
             <h2>Registrarse</h2>
             <form action="#" id="registro">
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                    <input type="text" id="name-user" placeholder="Nombre usuario:" required>
+                    <input type="text" id="name-user" required>
+                    <label>Usuario</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                    <input type="email" id="email-registro" placeholder="Correo electronico:" required>
+                    <input type="email" id="email-registro" required>
+                    <label >Correo electrónico</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                    <input type="password" id="pass-registro" placeholder="Contraseña: Minimo 8 caracteres y una mayuscula" required>
+                    <input type="password" id="pass-registro" required>
+                    <label >Contraseña</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                    <input type="password" id="pass-confirmacion" placeholder="Confirmar Contraseña:" required>
+                    <input type="password" id="pass-confirmacion" required>
+                    <label >Confirmar contraseña</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="call-outline"></ion-icon></span>
-                    <input type="number" id="monto-apertura" placeholder="Monto de apertura (mínimo 100,000):" required>
+                    <input type="number" id="monto-apertura" required>
+                    <label >Monto de apertura</label>
                 </div>
                 <div class="remember-forgot">
                     <label >
@@ -94,60 +116,45 @@
                 <h1>Bienvenido a la familia</h1>
             </div>
             <div class="btn-class">
-                <button id="check-balance">Consultar Saldo</button>
-                <button id="withdraw">Retirar Dinero</button>
-                <button id="transfer">Transferir Dinero</button>
-                <button id="deposit">Consignar Dinero</button>
-                <button id="show-transactions">Historial de Transacciones</button>
+                <button id="consultarSaldo">Consultar Saldo</button>
+                <button id="retirarDinero">Retirar Dinero</button>
+                <button id="transferir">Transferir Dinero</button>
+                <button id="consignarDinero">Consignar Dinero</button>
+                <button id="historial">Historial de Transacciones</button>
                 <button id="logout">Cerrar Sesión</button>
             </div>
         </div>
     </section>
 
-    <div id="saldo-container" class="opciones-container" style="display: none;">
-        <div class="container-img">
-            <img src="assets/img/banco.png" alt="">
-        </div>
+    <div id="contenedorSaldo" class="opciones-container" style="display: none;">
         <p>Usuario: <span id="nombre-usuario"></span></p>
         <p>Saldo actual: <span id="saldo-actual"></span></p>
         <div class="centrar-boton">
-            <button id="volver-main-menu">Volver al Menú Principal</button>
+            <button id="regresarMenu">Volver al Menú Principal</button>
         </div>
     </div>
-    <div id="retiro-real" class="opciones-container" style="display: none;">
-        <div class="container-img">
-            <img src="assets/img/retirar.png" alt="">
-        </div>
+    <div id="retiroRetiro" class="opciones-container" style="display: none;">
         <p>Ingrese la cantidad a retirar:</p>
-        <input type="number" id="retiro-amount">
-        <button id="realizar-retiro">Realizar Retiro</button>
-        <button id="cancelar-retiro">Cancelar</button>
+        <input type="number" id="montoRetiro">
+        <button id="realizarRetiro">Realizar Retiro</button>
+        <button id="cancelarRetiro">Cancelar</button>
     </div>
-    <div id="comprobante-retiro" class="opciones-container" style="display: none;">
-        <div class="container-img">
-            <img src="assets/img/factura.png" alt="">
-        </div>
+    <div id="comprobanteRetiro" class="opciones-container" style="display: none;">
         <p>Retiro realizado:</p>
         <p>Monto retirado: <span id="monto-retirado"></span></p>
         <div class="centrar-boton">
             <button id="volver-main-menu-comprobante-retiro">Volver al Menú Principal</button>
         </div>
     </div>
-    <div id="transfer-div" class="opciones-container" style="display: none;">
-        <div class="container-img">
-            <img src="assets/img/trasferir.png" alt="">
-        </div>
+    <div id="transferirElDinero" class="opciones-container" style="display: none;">
         <p>Transferir dinero a:</p>
         <input type="email" id="destinatario-input" placeholder="Correo del destinatario" required>
         <input type="number" id="monto-transferido-input" placeholder="Monto a transferir" required>
-        <button id="realizar-transferencia">Realizar Transferencia</button>
+        <button id="realizarTransferencia">Realizar Transferencia</button>
         <button id="cancelar-transferencia">Cancelar</button>
     </div>
 
     <div id="comprobante-transferencia" class="opciones-container" style="display: none;">
-        <div class="container-img">
-            <img src="assets/img/factura.png" alt="">
-        </div>
         <p>Transferencia realizada:</p>
         <p>Destinatario: <span id="destinatario"></span></p>
         <p>Monto transferido: <span id="monto-transferido"></span></p>
@@ -157,18 +164,12 @@
     </div>
 
     <div id="consignar-div" class="opciones-container" style="display: none;">
-        <div class="container-img">
-            <img src="assets/img/consignar.png" alt="">
-        </div>
         <p>Consignar dinero:</p>
         <input type="number" id="monto-consignacion" placeholder="Monto a consignar" required>
         <button id="realizar-consignacion">Realizar Consignación</button>
         <button id="cancelar-consignacion">Cancelar</button>
     </div>
     <div id="comprobante-consignacion" class="opciones-container" style="display: none;">
-        <div class="container-img">
-            <img src="assets/img/factura.png" alt="">
-        </div>
         <p>Consignación realizada:</p>
         <p>Monto consignado: $<span id="monto-consignado"></span></p>
         <div class="centrar-boton">
