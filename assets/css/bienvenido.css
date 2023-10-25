@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+/* CUERPO */
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(../img/azul.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+}
+/* ENCABEZADO */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 14%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+    /* Logo empresa */
+.logo-logo{
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+    /* MENU PRINCIPAL DE NAVEGACION */
+
+        /* Enlaces del menu principal */
+.navegacion a{
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+        /* Lineas inferiores de enlaces del menu principal */
+.navegacion a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition-duration: .5s;
+}
+.navegacion a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+    /*Boton login del menu principal*/
+.navegacion .btnCerrarSesionPopup{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    margin-left: 20px;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+}
+.navegacion .btnCerrarSesionPopup:hover{
+    background-color: #fff;
+    color: #162938;
+}

@@ -1,31 +1,25 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="shortcut icon" href="./assets/img/azul.jpg">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="icon" href="./assets/img/logo.jpg"">
     <title>CoinBank</title>
 </head>
-
 <body>
-    <header class="header">
-        <!-- Logo empresa -->
+    <header>
         <h2 class="logo">CoinBank</h2>
-        <!-- Menu principal de navegacion -->
         <nav class="navigation">
-            <!-- Enlaces del menu principal -->
-            <a href="#">Inicio</a>
-            <a href="#">Acerca</a>
-            <a href="#">Servicios</a>
-            <a href="#">Contacto</a>
-            <!-- Boton login menu principal -->
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
             <button class="btnLoginPopup">Login</button>
         </nav>
     </header>
 
-    <section class="wrapper" id="wrapper">
+    <section class="wrapper">
 
         <span class="icon-close">
             <ion-icon name="close-circle-outline"></ion-icon>
@@ -34,156 +28,100 @@
         <div class="form-box login">
             <h2>Login</h2>
             
-            <form action="#" id="login">
+            <form action="#">
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="mail-outline"></ion-icon>
                     </span>
-                    <input type="email" id="user" required>
-                    <label >Correo electrónico</label>
+                    <input id="user" type="text" required>
+                    <label>Username</label>
                 </div>
+
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="lock-closed-outline"></ion-icon>
                     </span>
-                    <input type="password" id="pass" required>
-                    <label >Contraseña</label>
+                    <input id="pass" type="password" required>
+                    <label>Password</label>
                 </div>
+
                 <div class="remember-forgot">
                     <label >
-                        <input type="checkbox">Recordarme
+                        <input type="checkbox">Remember me
                     </label>
-                    <a href="#">¿Olvidaste la Contraseña?</a>
+                    <a href="#">Forgot password?</a>
                 </div>
-                <input type="submit" id="btnIniciar" class="btn" value="Iniciar sesión">
+                
+                <input type="button" onclick="inicioSesion()" class="btn" value="Login">
+                <!-- <button onclick="inicioSesion()" type="submit" class="btn">Login
+                </button> -->
+
                 <div class="login-register">
                     <p>Don't have an account?
                         <a href="#" class="register-link">Register</a>
                     </p>
                 </div>
+
             </form>
         </div>
 
         <div class="form-box register">
-            <h2>Registrarse</h2>
-            <form action="#" id="registro">
+            <h2>Registration</h2>
+            <form action="#">
+
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                    <input type="text" id="name-user" required>
-                    <label>Usuario</label>
+                    <span class="icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                    <input type="text" required>
+                    <label >Username</label>
                 </div>
+
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                    <input type="email" id="email-registro" required>
-                    <label >Correo electrónico</label>
+                    <span class="icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </span>
+                    <input type="email" required>
+                    <label >Email</label>
                 </div>
+
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                    <input type="password" id="pass-registro" required>
-                    <label >Contraseña</label>
+                    <span class="icon">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label >Create password</label>
                 </div>
+
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                    <input type="password" id="pass-confirmacion" required>
-                    <label >Confirmar contraseña</label>
+                    <span class="icon">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label >Confirm password</label>
                 </div>
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="call-outline"></ion-icon></span>
-                    <input type="number" id="monto-apertura" required>
-                    <label >Monto de apertura</label>
-                </div>
+
                 <div class="remember-forgot">
                     <label >
-                        <input type="checkbox">¿Estás de acuerdo con los terminos y condiciones?
+                        <input type="checkbox">I agree to the terms and conditions
                     </label>
                 </div>
-                <div>
-                    <input type="submit" id="btnRegistrar" class="btn" value="Registrarse">
-                </div>
+
+                <button type="submit" class="btn">Register
+                </button>
+
                 <div class="login-register">
-                    <p>¿ya tienes una cuenta?
-                        <a href="#" class="login-link">Iniciar sesion</a>
+                    <p>Already have an account?
+                        <a href="#" class="login-link">Login</a>
                     </p>
                 </div>
+                
             </form>
         </div>
-        
     </section>
 
-    <section class="main-menu" id="main-menu" style="display: none;">
-        <div class="container-opciones">
-            <div class="container-titulo">
-                <h1>Bienvenido a la familia</h1>
-            </div>
-            <div class="btn-class">
-                <button id="consultarSaldo">Consultar Saldo</button>
-                <button id="retirarDinero">Retirar Dinero</button>
-                <button id="transferir">Transferir Dinero</button>
-                <button id="consignarDinero">Consignar Dinero</button>
-                <button id="historial">Historial de Transacciones</button>
-                <button id="logout">Cerrar Sesión</button>
-            </div>
-        </div>
-    </section>
-
-    <div id="contenedorSaldo" class="opciones-container" style="display: none;">
-        <p>Usuario: <span id="nombre-usuario"></span></p>
-        <p>Saldo actual: <span id="saldo-actual"></span></p>
-        <div class="centrar-boton">
-            <button id="regresarMenu">Volver al Menú Principal</button>
-        </div>
-    </div>
-    <div id="retiroRetiro" class="opciones-container" style="display: none;">
-        <p>Ingrese la cantidad a retirar:</p>
-        <input type="number" id="montoRetiro">
-        <button id="realizarRetiro">Realizar Retiro</button>
-        <button id="cancelarRetiro">Cancelar</button>
-    </div>
-    <div id="comprobanteRetiro" class="opciones-container" style="display: none;">
-        <p>Retiro realizado:</p>
-        <p>Monto retirado: <span id="monto-retirado"></span></p>
-        <div class="centrar-boton">
-            <button id="volver-main-menu-comprobante-retiro">Volver al Menú Principal</button>
-        </div>
-    </div>
-    <div id="transferirElDinero" class="opciones-container" style="display: none;">
-        <p>Transferir dinero a:</p>
-        <input type="email" id="destinatario-input" placeholder="Correo del destinatario" required>
-        <input type="number" id="monto-transferido-input" placeholder="Monto a transferir" required>
-        <button id="realizarTransferencia">Realizar Transferencia</button>
-        <button id="cancelar-transferencia">Cancelar</button>
-    </div>
-
-    <div id="comprobante-transferencia" class="opciones-container" style="display: none;">
-        <p>Transferencia realizada:</p>
-        <p>Destinatario: <span id="destinatario"></span></p>
-        <p>Monto transferido: <span id="monto-transferido"></span></p>
-        <div class="centrar-boton">
-            <button id="volver-main-menu-comprobante">Volver al Menú Principal</button>
-        </div>
-    </div>
-
-    <div id="consignar-div" class="opciones-container" style="display: none;">
-        <p>Consignar dinero:</p>
-        <input type="number" id="monto-consignacion" placeholder="Monto a consignar" required>
-        <button id="realizar-consignacion">Realizar Consignación</button>
-        <button id="cancelar-consignacion">Cancelar</button>
-    </div>
-    <div id="comprobante-consignacion" class="opciones-container" style="display: none;">
-        <p>Consignación realizada:</p>
-        <p>Monto consignado: $<span id="monto-consignado"></span></p>
-        <div class="centrar-boton">
-            <button id="volver-main-menu-comprobante-consignacion">Volver al Menú Principal</button>
-        </div>
-    </div>
-
-    <div class="container-lista" id="historial-container" style="display: none;">
-        <!-- Aquí se mostrarán los movimientos -->
-    </div>
-
-    <script src="assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
-
 </html>
